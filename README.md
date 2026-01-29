@@ -1,42 +1,3 @@
-# Podverse Web
-
-- [Languages](#languages)
-- [About](#about)
-- [Getting started](#getting-started)
-- [How to run the app locally](#how-to-run-the-app-locally)
-- [Git History](#git-history)
-  * [Ignore linter-only commits rules in Git history](#ignore-linter-only-commits-rules-in-git-history)
-- [Contact](#contact)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>generated with markdown-toc</a></i></small>
-
-## Languages
-
-Translations are greatly appreciated! If you would like to help translate Podverse, please visit our [Weblate page](https://hosted.weblate.org/projects/podverse/podverse-web/).
-
-<a href="https://hosted.weblate.org/engage/podverse/">
-<img style="margin-bottom: -55px;" src="https://hosted.weblate.org/widgets/podverse/-/podverse-web/horizontal-auto.svg" alt="Translation status" />
-</a>
-
-## About
-
-Podverse is a FOSS podcast manager for iOS, Android, F-Droid, and web that supports [Podcasting 2.0](https://medium.com/@everywheretrip/an-introduction-to-podcasting-2-0-3c4f61ea17f4) and [value for value](https://value4value.info/) features.
-
-Features of this web app include:
-
-- subscribe to podcasts
-- audio playback
-- video playback
-- livestream playback
-- boosts
-- chapters
-- cross-app comments
-- transcripts
-- create and share clips
-- create and share playlists
-- create a listener profile
-- subscribe to listener profiles
-- screen-reader accessibility
 
 ## Getting started
 
@@ -85,4 +46,5 @@ Which was taken from <https://michaelheap.com/git-ignore-rev/>.
 ## Contact
 
 We can be reached in our [Matrix space](https://matrix.to/#/#podverse-space:matrix.org) (preferred), [Discord channel](https://discord.gg/6HkyNKR), or by emailing <contact@podverse.fm>.
+
 # podse
