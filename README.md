@@ -28,23 +28,3 @@ npm run dev
 ```
 
 Then open a web browser and go to <http://localhost:3000>.
-
-## Git History
-
-### Ignore linter-only commits rules in Git history
-
-If you'd like to ignore noisy linter-only commits in your Git history, we have a `.git-blame-ignore-revs` file that can filter out problematic commits that were the result of ONLY doing lint fixes. Your local machine can be configured to use that file as a list of commits that should be ignored while doing blames and showing inline file history.
-
-This can be configured by running:
-
-```sh
-git config --global blame.ignoreRevsFile .git-blame-ignore-revs
-```
-
-Which was taken from <https://michaelheap.com/git-ignore-rev/>.
-
-## Contact
-
-We can be reached in our [Matrix space](https://matrix.to/#/#podverse-space:matrix.org) (preferred), [Discord channel](https://discord.gg/6HkyNKR), or by emailing <contact@podverse.fm>.
-
-# podse
