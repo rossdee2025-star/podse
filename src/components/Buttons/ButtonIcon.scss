@@ -1,0 +1,23 @@
+.button-icon {
+  @include themeGen() {
+    color: getThemeVal('textPrimary') !important;
+  }
+
+  &:hover {
+    @include themeGen() {
+      color: getThemeVal('textSecondary') !important;
+    }
+  }
+
+  &.is-link {
+    @include themeGen() {
+      color: getThemeVal('textLink') !important;
+    }
+  }
+
+  &.is-link:hover {
+    @include themeGen() {
+      color: getThemeVal('textLinkHover') !important;
+    }
+  }
+}

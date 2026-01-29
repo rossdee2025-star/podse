@@ -1,0 +1,7 @@
+*.json
+
+docs
+public
+src/state/initialState.json
+package.json
+tsconfig.json

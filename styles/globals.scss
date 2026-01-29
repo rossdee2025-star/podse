@@ -1,0 +1,446 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-weight: 400;
+  word-break: break-word;
+
+  @include themeGen() {
+    color: getThemeVal('textPrimary');
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    @include themeGen() {
+      background-color: getThemeVal('backgroundPrimary');
+    }
+
+    &.is-embed {
+      background-color: transparent;
+      color: transparent;
+
+      .embed-loading-spinner {
+        align-items: center;
+        color: var(--pv-embed-icon-color, #cccccc);
+        display: flex;
+        font-size: 24px;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0px;
+        right: 0;
+      }
+    }
+  }
+
+  .app-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .app-main-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .main-max-width {
+    flex: 1;
+    margin: 0 24px;
+    // max-width: $main-max-width;
+  }
+
+  .no-padding-top {
+    padding-top: 0 !important;
+  }
+
+  .no-margin-bottom {
+    margin-bottom: 0 !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  hr {
+    border-bottom: 0;
+    border-width: 1px;
+    width: 100%;
+
+    @include themeGen() {
+      border-color: getThemeVal('divider');
+    }
+  }
+
+  input {
+    display: block;
+    width: 100%;
+  }
+
+  input[type='range'] {
+    cursor: pointer;
+  }
+
+  code {
+    white-space: pre-wrap;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .form-wrapper {
+    margin: 28px;
+    max-width: 460px;
+
+    h2 {
+      margin-bottom: 28px;
+    }
+
+    .submit-buttons {
+      display: flex;
+      justify-content: flex-end;
+
+      button:last-child {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  .flex-centered-content-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      font-size: $text-xl;
+    }
+
+    .icon {
+      svg {
+        height: unset;
+        width: 36px;
+      }
+    }
+  }
+
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-stretch {
+    flex: 1;
+  }
+
+  a,
+  button {
+    border-radius: 4px;
+
+    &:focus {
+      @include themeGen() {
+        box-shadow: getThemeVal('focusGlow');
+      }
+    }
+  }
+
+  .link {
+    @include themeGen() {
+      color: getThemeVal('textLink');
+    }
+
+    &:hover {
+      @include themeGen() {
+        color: getThemeVal('textLinkHover');
+      }
+    }
+  }
+
+  h1 {
+    font-size: $text-huge;
+    font-weight: $font-weight-light;
+  }
+
+  h2 {
+    font-size: $text-xxl;
+    font-weight: $font-weight-medium;
+  }
+
+  h3 {
+    font-size: $text-xl;
+    font-weight: $font-weight-light;
+  }
+
+  p {
+    font-size: $text-md;
+
+    @include themeGen() {
+      color: getThemeVal('textParagraph');
+    }
+  }
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+
+    @include themeGen() {
+      color: getThemeVal('textParagraph');
+    }
+  }
+
+  li,
+  ol {
+    @include themeGen() {
+      color: getThemeVal('textParagraph');
+    }
+  }
+
+  .text-page {
+    h2 {
+      margin: 0 0 16px 0;
+    }
+
+    h3 {
+      font-size: $text-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: $text-md;
+      line-height: 24px;
+      margin: 0 0 16px 0;
+
+      &.bigger {
+        font-size: $text-lg;
+        line-height: 27px;
+      }
+    }
+
+    label {
+      font-size: $text-md;
+      line-height: 24px;
+    }
+
+    li {
+      font-size: $text-md;
+      line-height: 24px;
+    }
+
+    a {
+      @include themeGen() {
+        color: getThemeVal('textLink');
+      }
+
+      &:hover {
+        @include themeGen() {
+          color: getThemeVal('textLinkHover');
+        }
+      }
+    }
+
+    hr {
+      margin: 24px 0;
+    }
+
+    hr.extra-margin {
+      margin: 32px 0;
+    }
+
+    ul {
+      list-style: inside;
+      margin-bottom: 1rem;
+    }
+
+    .button-column {
+      display: flex;
+      flex-direction: column;
+      margin: 0 32px;
+
+      button {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .error-page {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .is-active {
+    @include themeGen() {
+      color: getThemeVal('premiumIsActive');
+    }
+  }
+
+  .is-expired {
+    @include themeGen() {
+      color: getThemeVal('premiumIsExpired');
+    }
+  }
+
+  .time-spacer {
+    margin: 0 4px;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .button-explanation {
+    margin-top: 16px;
+  }
+}
+
+/*
+  Source for disable-scrollbars https://stackoverflow.com/a/54410301/2608858
+  There is an issue with Windows only web browsers with small viewports showing
+  ugly scrollbars when they're not really necessary. I'm disabling scrollbars
+  for all web browsers with these rules below, but ideally these rules would
+  only target the browsers that show ugly scrollbars.
+*/
+.disable-scrollbars *::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+
+.disable-scrollbars * {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.aria-only-visible-to-screen-readers {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.button-row-below-text-input {
+  display: flex;
+  margin: -12px 0 20px 0;
+
+  button {
+    margin: 0 24px 12px 0;
+  }
+}
+
+@media (max-width: $media-max-width-laptop) {
+  body {
+    .column {
+      margin-bottom: 44px;
+    }
+
+    .hide-below-laptop-max-width {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: $media-max-width-tablet-xl) {
+  body {
+    .column {
+      margin-bottom: 44px;
+    }
+
+    .hide-below-tablet-xl-max-width {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: $media-max-width-tablet) {
+  body {
+    .main-max-width {
+      margin: 0 16px;
+    }
+
+    .hide-below-tablet-max-width {
+      display: none !important;
+    }
+
+    .top-margin-below-tablet-max-width {
+      margin-top: 24px;
+    }
+  }
+}
+
+@media (max-width: $media-max-width-mobile) {
+  .hide-below-mobile-max-width {
+    display: none !important;
+  }
+}
+
+@media (min-width: $media-min-width-laptop) {
+  .hide-above-laptop-min-width {
+    display: none !important;
+  }
+}
+
+@media (min-width: $media-min-width-tablet-xl) {
+  .hide-above-tablet-xl-min-width {
+    display: none !important;
+  }
+}
+
+@media (min-width: $media-min-width-tablet) {
+  .hide-above-tablet-min-width {
+    display: none !important;
+  }
+}
+
+@media (max-width: $media-max-width-tablet) {
+  hr {
+    width: calc(100% + 16px) !important;
+  }
+}
+
+/* Avoid Chrome with support check,
+   then use -webkit-fill-available to prevent vh sizing issues on iOS. */
+@supports (-webkit-touch-callout: none) {
+  body {
+    .app {
+      height: -webkit-fill-available;
+    }
+  }
+}

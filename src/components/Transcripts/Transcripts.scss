@@ -1,0 +1,51 @@
+.transcripts {
+  .transcripts-wrapper {
+    max-height: 400px;
+    overflow: auto;
+    position: relative;
+
+    .transcript-row-wrapper {
+      .transcript-row__speaker {
+        font-size: $text-sm;
+        font-weight: $font-weight-bold;
+        margin: 16px 0 6px 0;
+
+        @include themeGen() {
+          color: getThemeVal('textTertiary') !important;
+        }
+      }
+
+      .transcript-row {
+        cursor: pointer;
+        display: flex;
+        padding: 4px 0;
+  
+        &:hover {
+          @include themeGen() {
+            color: getThemeVal('textSecondary');
+          }
+        }
+  
+        &.currently-playing {
+          @include themeGen() {
+            color: getThemeVal('textWarning');
+          }
+        }
+  
+        .transcript-row__text {
+          font-size: $text-lg;
+          line-height: 27px;
+          flex: 1;
+        }
+  
+        .transcript-row__time {
+          align-items: center;
+          display: flex;
+          font-size: $text-md;
+          line-height: 27px;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}

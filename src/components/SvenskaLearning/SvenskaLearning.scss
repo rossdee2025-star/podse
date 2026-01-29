@@ -1,0 +1,763 @@
+// Svenska Learning Panel Styles
+
+.svenska-learning-panel {
+  &__no-transcript {
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .no-transcript-icon {
+      font-size: 48px;
+      opacity: 0.6;
+    }
+
+    .no-transcript-message {
+      font-size: $text-lg;
+
+      @include themeGen() {
+        color: getThemeVal('textSecondary');
+      }
+    }
+
+    .generate-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: $text-md;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+
+      @include themeGen() {
+        background: getThemeVal('buttonPrimary');
+        color: getThemeVal('textOnButtonPrimary');
+      }
+
+      &:hover {
+        transform: translateY(-1px);
+        @include themeGen() {
+          background: getThemeVal('buttonPrimaryHover');
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    .no-transcript-hints {
+      font-size: $text-sm;
+      max-width: 400px;
+      line-height: 1.5;
+
+      @include themeGen() {
+        color: getThemeVal('textTertiary');
+      }
+    }
+  }
+
+  &__generating {
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .generating-spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+
+      @include themeGen() {
+        border-color: getThemeVal('borderPrimary');
+        border-top-color: getThemeVal('buttonPrimary');
+      }
+    }
+
+    .generating-status {
+      font-size: $text-md;
+
+      @include themeGen() {
+        color: getThemeVal('textSecondary');
+      }
+    }
+
+    .generating-hint {
+      font-size: $text-sm;
+
+      @include themeGen() {
+        color: getThemeVal('textTertiary');
+      }
+    }
+  }
+
+  &__error {
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    .error-icon {
+      font-size: 36px;
+    }
+
+    .error-message {
+      font-size: $text-md;
+      max-width: 400px;
+
+      @include themeGen() {
+        color: getThemeVal('textDanger');
+      }
+    }
+
+    .retry-btn {
+      padding: 8px 16px;
+      font-size: $text-sm;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundSecondary');
+        border-color: getThemeVal('borderPrimary');
+        color: getThemeVal('textPrimary');
+      }
+
+      &:hover {
+        @include themeGen() {
+          background: getThemeVal('backgroundTertiary');
+        }
+      }
+    }
+  }
+
+  .transcript-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: $text-sm;
+    border-radius: 4px;
+    margin-left: 8px;
+
+    @include themeGen() {
+      background: getThemeVal('backgroundWarning');
+      color: getThemeVal('textWarning');
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid;
+    margin-bottom: 16px;
+
+    @include themeGen() {
+      border-color: getThemeVal('borderPrimary');
+    }
+
+    .toolbar-option {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: $text-md;
+      cursor: pointer;
+
+      input[type='checkbox'] {
+        cursor: pointer;
+      }
+    }
+
+    .toolbar-btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: $text-sm;
+      cursor: pointer;
+      border: 1px solid;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundSecondary');
+        border-color: getThemeVal('borderPrimary');
+        color: getThemeVal('textPrimary');
+      }
+
+      &:hover {
+        @include themeGen() {
+          background: getThemeVal('backgroundTertiary');
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .content-main {
+      flex: 2;
+      min-width: 0;
+    }
+
+    .content-sidebar {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @media (max-width: 768px) {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+// Learning Subtitle Styles
+.learning-subtitle {
+  &__controls {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    margin-bottom: 12px;
+
+    .auto-scroll-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: $text-sm;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+  .learning-row-wrapper {
+    margin-bottom: 12px;
+
+    .transcript-row__speaker {
+      font-size: $text-sm;
+      font-weight: $font-weight-bold;
+      margin-bottom: 4px;
+
+      @include themeGen() {
+        color: getThemeVal('textTertiary');
+      }
+    }
+
+    .transcript-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundSecondary');
+      }
+
+      &:hover {
+        @include themeGen() {
+          background: getThemeVal('backgroundTertiary');
+        }
+      }
+
+      &.currently-playing {
+        @include themeGen() {
+          background: getThemeVal('backgroundWarning');
+          border-left: 3px solid getThemeVal('textWarning');
+        }
+      }
+
+      &__content {
+        flex: 1;
+      }
+
+      &__text {
+        font-size: $text-lg;
+        line-height: 1.6;
+
+        &.svenska-text {
+          margin-bottom: 4px;
+        }
+      }
+
+      &__translation {
+        font-size: $text-md;
+        font-style: italic;
+        margin-top: 4px;
+
+        @include themeGen() {
+          color: getThemeVal('textSecondary');
+        }
+      }
+
+      &__actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 12px;
+      }
+
+      &__time {
+        font-size: $text-sm;
+
+        @include themeGen() {
+          color: getThemeVal('textTertiary');
+        }
+      }
+
+      .repeat-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 4px;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .learning-word {
+    cursor: pointer;
+    padding: 0 1px;
+    border-radius: 2px;
+    transition: background 0.15s;
+
+    &:hover {
+      @include themeGen() {
+        background: getThemeVal('backgroundWarning');
+      }
+    }
+
+    &.selected {
+      @include themeGen() {
+        background: getThemeVal('backgroundPrimary');
+        color: getThemeVal('textLink');
+      }
+    }
+  }
+}
+
+// A-B Repeat Controls Styles
+.ab-repeat-controls {
+  padding: 16px;
+  border-radius: 8px;
+
+  @include themeGen() {
+    background: getThemeVal('backgroundSecondary');
+    border: 1px solid getThemeVal('borderPrimary');
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: $text-lg;
+      margin: 0;
+    }
+
+    .repeat-status {
+      font-size: $text-sm;
+      padding: 4px 8px;
+      border-radius: 4px;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundWarning');
+        color: getThemeVal('textWarning');
+      }
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .point-control {
+      .point-btn {
+        min-width: 100px;
+      }
+    }
+
+    .segment-duration {
+      font-size: $text-sm;
+
+      @include themeGen() {
+        color: getThemeVal('textSecondary');
+      }
+    }
+  }
+
+  &__settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    .setting-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      label {
+        font-size: $text-sm;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      select {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: $text-sm;
+
+        @include themeGen() {
+          background: getThemeVal('backgroundPrimary');
+          border: 1px solid getThemeVal('borderPrimary');
+          color: getThemeVal('textPrimary');
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+
+    .button-rectangle {
+      &.active {
+        @include themeGen() {
+          background: getThemeVal('backgroundWarning');
+        }
+      }
+    }
+  }
+}
+
+// Dictionary Panel Styles
+.dictionary-panel {
+  padding: 16px;
+  border-radius: 8px;
+
+  @include themeGen() {
+    background: getThemeVal('backgroundSecondary');
+    border: 1px solid getThemeVal('borderPrimary');
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: $text-lg;
+      margin: 0;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+
+      @include themeGen() {
+        color: getThemeVal('textPrimary');
+      }
+
+      &:hover {
+        @include themeGen() {
+          color: getThemeVal('textLink');
+        }
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    .search-input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: $text-md;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundPrimary');
+        border: 1px solid getThemeVal('borderPrimary');
+        color: getThemeVal('textPrimary');
+      }
+
+      &::placeholder {
+        @include themeGen() {
+          color: getThemeVal('textTertiary');
+        }
+      }
+    }
+  }
+
+  &__error {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+    @include themeGen() {
+      background: getThemeVal('backgroundDanger');
+      color: getThemeVal('textDanger');
+    }
+  }
+
+  &__entry {
+    .entry-word {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+
+      .word {
+        font-size: $text-xl;
+        font-weight: $font-weight-bold;
+      }
+
+      .pos {
+        font-size: $text-sm;
+        font-style: italic;
+
+        @include themeGen() {
+          color: getThemeVal('textSecondary');
+        }
+      }
+
+      .pronunciation-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 4px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .entry-translation,
+    .entry-example,
+    .entry-pronunciation {
+      margin-bottom: 12px;
+
+      strong {
+        display: block;
+        font-size: $text-sm;
+        margin-bottom: 4px;
+
+        @include themeGen() {
+          color: getThemeVal('textSecondary');
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: $text-md;
+        line-height: 1.5;
+
+        &.svenska {
+          font-style: italic;
+        }
+
+        &.english {
+          @include themeGen() {
+            color: getThemeVal('textSecondary');
+          }
+        }
+      }
+    }
+  }
+}
+
+// AI Explanation Panel Styles
+.ai-explanation {
+  padding: 16px;
+  border-radius: 8px;
+
+  @include themeGen() {
+    background: getThemeVal('backgroundSecondary');
+    border: 1px solid getThemeVal('borderPrimary');
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: $text-lg;
+      margin: 0;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+
+      @include themeGen() {
+        color: getThemeVal('textPrimary');
+      }
+    }
+  }
+
+  &__input {
+    margin-bottom: 12px;
+
+    .text-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: $text-md;
+      resize: vertical;
+      min-height: 80px;
+
+      @include themeGen() {
+        background: getThemeVal('backgroundPrimary');
+        border: 1px solid getThemeVal('borderPrimary');
+        color: getThemeVal('textPrimary');
+      }
+
+      &::placeholder {
+        @include themeGen() {
+          color: getThemeVal('textTertiary');
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+
+    .button-rectangle {
+      flex: 1;
+      min-width: 80px;
+    }
+  }
+
+  &__content {
+    min-height: 100px;
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+
+    @include themeGen() {
+      color: getThemeVal('textSecondary');
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &__placeholder {
+    padding: 24px;
+    text-align: center;
+
+    @include themeGen() {
+      color: getThemeVal('textTertiary');
+    }
+  }
+
+  &__error {
+    padding: 12px;
+    border-radius: 4px;
+
+    @include themeGen() {
+      background: getThemeVal('backgroundDanger');
+      color: getThemeVal('textDanger');
+    }
+  }
+
+  &__result {
+    .result-content {
+      font-size: $text-md;
+      line-height: 1.6;
+
+      p {
+        margin: 0 0 8px 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .result-provider {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid;
+      font-size: $text-sm;
+
+      @include themeGen() {
+        border-color: getThemeVal('borderPrimary');
+        color: getThemeVal('textTertiary');
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

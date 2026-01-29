@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+
+  hr {
+    margin-bottom: 20px;
+  }
+
+  .no-results-found-message {
+    margin: 24px 0;
+
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    font-size: $text-xl;
+    justify-content: center;
+
+    @include themeGen() {
+      color: getThemeVal('textSecondary');
+    }
+
+    p {
+      margin: 0 0 16px 0;
+
+      a {
+        @include themeGen() {
+          color: getThemeVal('buttonLinkText');
+        }
+
+        &:hover {
+          @include themeGen() {
+            color: getThemeVal('buttonLinkTextRollover');
+          }
+        }
+      }
+    }
+  }
+}

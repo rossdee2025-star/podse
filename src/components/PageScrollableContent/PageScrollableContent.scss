@@ -1,0 +1,23 @@
+.page-scrollable-content {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+  position: relative;
+
+  .inner-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 24px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: $media-max-width-tablet) {
+  .page-scrollable-content {
+    .inner-content {
+      margin: 0 16px;
+      padding-top: 4px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DF9KG8H54B.com.podverse.fm",
+        "paths": [
+          "NOT /embed/*",
+          "NOT /miniplayer/*",
+          "NOT /videoplayer/*",
+          "NOT /verify-email*",
+          "NOT /admin*",
+          "NOT /podping*",
+          "NOT /tutorials*",
+          "NOT /contribute*",
+          "*"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+.progress-button-container {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  margin: -1px auto 0 auto;
+
+  .top-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bottom-row {
+    display: flex;
+    height: 46px;
+    justify-content: center;
+  }
+
+  .player-progress-button {
+    @include themeGen() {
+      color: getThemeVal('textSecondary');
+    }
+
+    &.skip {
+      margin: 0px;
+    }
+
+    &.jump,
+    .mini-jump {
+      &.backwards {
+        margin: 0 18px 0 6px;
+      }
+      &.forwards {
+        margin: 0 6px 0 18px;
+      }
+    }
+  }
+}

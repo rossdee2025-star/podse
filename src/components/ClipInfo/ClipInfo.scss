@@ -1,0 +1,50 @@
+.clip-info {
+  margin: 0 0 0 0;
+
+  .episode-title {
+    font-size: $text-xxl;
+    margin: 0 0 9px 0;
+  }
+
+  .episode-pub-date {
+    font-weight: $font-weight-bold;
+    margin: 0 0 16px 0;
+
+    @include themeGen() {
+      color: getThemeVal('textTertiary');
+    }
+  }
+
+  .clip-inner-wrapper {
+    margin-top: 24px;
+
+    img {
+      margin: 0 24px 20px 0;
+    }
+
+    .clip-text-wrapper {
+      .clip-title {
+        font-size: $text-xxl;
+        margin: 0 0 16px 0;
+      }
+
+      .media-item-controls {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .clip-info {
+    .episode-title {
+      [href] {
+        &:hover {
+          @include themeGen() {
+            color: getThemeVal('textSecondary');
+          }
+        }
+      }
+    }
+  }
+}

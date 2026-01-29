@@ -1,0 +1,81 @@
+.episode-list-item {
+  display: flex;
+  flex: 0;
+  flex-direction: row;
+  margin: 20px 0;
+
+  .main-wrapper {
+    flex: 1;
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      img {
+        border-radius: $item-border-radius;
+        margin: 0 16px 10px 0;
+      }
+
+      .text-wrapper {
+        flex: 1;
+
+        .podcast-title {
+          font-size: $text-sm;
+          margin-bottom: 6px;
+
+          @include themeGen() {
+            color: getThemeVal('textSecondary');
+          }
+        }
+
+        .title {
+          margin-bottom: 9px;
+          font-size: $text-xl;
+          font-weight: $font-weight-medium;
+          padding-bottom: 0;
+
+          @include line-clamp(4);
+        }
+
+        .description {
+          margin: 0 0 10px 0;
+          word-wrap: break-word;
+
+          @include line-clamp(2);
+
+          @include themeGen() {
+            color: getThemeVal('textSecondary');
+          }
+        }
+      }
+    }
+  }
+
+  .side-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    &:first-child {
+      margin-right: 16px;
+    }
+    &:last-child {
+      margin-left: 16px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .episode-list-item {
+    .main-wrapper {
+      .content-wrapper {
+        &:hover * {
+          cursor: pointer;
+
+          @include themeGen() {
+            color: getThemeVal('textHover') !important;
+          }
+        }
+      }
+    }
+  }
+}

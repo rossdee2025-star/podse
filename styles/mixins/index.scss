@@ -1,0 +1,54 @@
+@import './gradientStyles';
+@import './themes';
+
+@mixin line-clamp($line-count) {
+  display: -webkit-box;
+  line-clamp: $line-count;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-count;
+}
+
+@mixin blurredBackground() {
+  @include themeGen() {
+    background-color: getThemeVal('backgroundOpaqueDark');
+  }
+
+  @supports (backdrop-filter: blur($background-blur)) {
+    backdrop-filter: blur($background-blur);
+    -webkit-backdrop-filter: blur($background-blur);
+
+    @include themeGen() {
+      background-color: getThemeVal('backgroundTransparent');
+    }
+  }
+}
+
+@mixin blurredBackgroundEmbed() {
+  background-color: rgba(0, 0, 0, 0.875) !important;
+
+  @supports (backdrop-filter: blur($background-blur)) {
+    backdrop-filter: blur($background-blur) !important;
+    -webkit-backdrop-filter: blur($background-blur) !important;
+    background-color: var(--pv-embed-full-screen-background-color, rgba(15, 18, 53, 0.4)) !important;
+  }
+}
+
+@mixin placeholderColor($color) {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $color !important;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color !important;
+  }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $color !important;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $color !important;
+  }
+}

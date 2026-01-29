@@ -1,0 +1,40 @@
+.download-app-buttons {
+  display: flex;
+  flex-wrap: flex;
+  margin: 16px 0;
+
+  .download-badge-download-on-the-app-store {
+    background: url('/images/download-badge-download-on-the-app-store.svg') no-repeat;
+    flex: 0 0 auto;
+    height: 40px;
+    margin: 8px 0;
+    overflow: hidden;
+    width: 135px;
+  }
+
+  .download-badge-get-it-on-google-play {
+    flex: 0 0 auto;
+    margin: 8px 22px 8px 22px;
+    position: relative;
+    width: 135px;
+
+    img {
+      left: -8px;
+      position: absolute;
+      top: -9px;
+      width: 152px;
+    }
+  }
+
+  .download-badge-get-it-on-fdroid {
+    background-image: url('/images/download-badge-get-it-on-fdroid.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex: 0 0 auto;
+    height: 40px;
+    margin: 8px 0;
+    overflow: hidden;
+    width: 135px;
+  }
+}
